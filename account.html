@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account – LUMIÈRE Jewels</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-luxury">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>My Account</span>
+    </div>
+  </div>
+</section>
+
+<!-- Account Section -->
+<section class="section-pad">
+  <div class="container">
+
+    <!-- Auth State: Show Login/Register if not logged in -->
+    <div id="authSection">
+      <div class="text-center mb-5">
+        <h1 style="font-family:var(--font-display);font-size:2rem;margin-bottom:8px">Welcome Back</h1>
+        <p style="color:var(--mid-gray);font-size:0.9rem">Sign in to access your account, orders, and wishlist</p>
+      </div>
+
+      <ul class="nav account-tabs justify-content-center border-bottom mb-5" id="authTabs">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabLogin">Sign In</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabRegister">Create Account</button></li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- LOGIN -->
+        <div class="tab-pane fade show active" id="tabLogin">
+          <div class="auth-card">
+            <div style="text-align:center;margin-bottom:28px">
+              <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold)">Sign In to Your Account</div>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+              <label class="auth-label">Email Address</label>
+              <input type="email" class="auth-input" placeholder="you@example.com" id="loginEmail" required>
+              <label class="auth-label">Password</label>
+              <input type="password" class="auth-input" placeholder="Enter your password" id="loginPass" required>
+              <div class="d-flex justify-content-between align-items-center mb-20" style="margin-bottom:20px">
+                <label style="font-size:0.8rem;display:flex;gap:8px;align-items:center;cursor:pointer">
+                  <input type="checkbox" style="accent-color:var(--gold)"> Remember me
+                </label>
+                <a href="#" style="font-size:0.8rem;color:var(--gold)">Forgot Password?</a>
+              </div>
+              <button type="submit" class="btn-gold w-100" style="padding:14px">Sign In</button>
+              <p style="text-align:center;font-size:0.8rem;color:var(--mid-gray);margin-top:20px">
+                Don't have an account? <a href="#" style="color:var(--gold)" onclick="document.querySelector('[data-bs-target=\'#tabRegister\']').click()">Create one</a>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="tab-pane fade" id="tabRegister">
+          <div class="auth-card">
+            <div style="text-align:center;margin-bottom:28px">
+              <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold)">Create Your Account</div>
+            </div>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+              <div class="row g-3">
+                <div class="col-6">
+                  <label class="auth-label">First Name</label>
+                  <input type="text" class="auth-input" placeholder="Priya" required style="margin-bottom:0">
+                </div>
+                <div class="col-6">
+                  <label class="auth-label">Last Name</label>
+                  <input type="text" class="auth-input" placeholder="Sharma" required style="margin-bottom:0">
+                </div>
+              </div>
+              <label class="auth-label mt-3">Email Address</label>
+              <input type="email" class="auth-input" placeholder="you@example.com" required>
+              <label class="auth-label">Phone Number</label>
+              <input type="tel" class="auth-input" placeholder="+91 98765 43210">
+              <label class="auth-label">Password</label>
+              <input type="password" class="auth-input" placeholder="Min 8 characters" required>
+              <label class="auth-label">Confirm Password</label>
+              <input type="password" class="auth-input" placeholder="Repeat password" required>
+              <label style="font-size:0.8rem;display:flex;gap:8px;align-items:flex-start;cursor:pointer;margin-bottom:20px">
+                <input type="checkbox" style="accent-color:var(--gold);margin-top:3px" required>
+                <span style="color:var(--mid-gray)">I agree to the <a href="#" style="color:var(--gold)">Terms of Service</a> and <a href="#" style="color:var(--gold)">Privacy Policy</a></span>
+              </label>
+              <button type="submit" class="btn-gold w-100" style="padding:14px">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logged In Dashboard (hidden by default, shown after login) -->
+    <div id="dashboardSection" style="display:none">
+      <div class="row g-4 mb-5">
+        <div class="col-md-3 col-6">
+          <div style="padding:24px;border:1px solid rgba(201,168,76,0.15);text-align:center;cursor:pointer;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'" onclick="showTab('orders')">
+            <i class="bi bi-bag" style="font-size:2rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+            <div style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark)">3</div>
+            <div style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);margin-top:4px">Orders</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div style="padding:24px;border:1px solid rgba(201,168,76,0.15);text-align:center;cursor:pointer;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'" onclick="showTab('wishlist')">
+            <i class="bi bi-heart" style="font-size:2rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+            <div style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark)">5</div>
+            <div style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);margin-top:4px">Wishlist</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div style="padding:24px;border:1px solid rgba(201,168,76,0.15);text-align:center;cursor:pointer;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'" onclick="showTab('address')">
+            <i class="bi bi-geo-alt" style="font-size:2rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+            <div style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark)">2</div>
+            <div style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);margin-top:4px">Addresses</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div style="padding:24px;border:1px solid rgba(201,168,76,0.15);text-align:center;cursor:pointer;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'" onclick="handleLogout()">
+            <i class="bi bi-box-arrow-right" style="font-size:2rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+            <div style="font-family:var(--font-display);font-size:1.4rem;color:var(--dark)">–</div>
+            <div style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);margin-top:4px">Logout</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Tabs -->
+      <ul class="nav account-tabs border-bottom mb-4" id="dashTabs">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabOrders">My Orders</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabWishlist">Wishlist</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabProfile">Profile</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabAddress">Addresses</button></li>
+      </ul>
+
+      <div class="tab-content" id="dashTabContent">
+
+        <!-- ORDERS -->
+        <div class="tab-pane fade show active" id="tabOrders">
+          <div style="overflow-x:auto">
+            <table class="table" style="font-size:0.88rem;min-width:600px">
+              <thead>
+                <tr style="background:var(--off-white)">
+                  <th style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);font-weight:500;padding:14px 16px">Order #</th>
+                  <th style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);font-weight:500;padding:14px 16px">Date</th>
+                  <th style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);font-weight:500;padding:14px 16px">Items</th>
+                  <th style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);font-weight:500;padding:14px 16px">Total</th>
+                  <th style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);font-weight:500;padding:14px 16px">Status</th>
+                  <th style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);font-weight:500;padding:14px 16px">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:16px;font-family:var(--font-display)">#LMR-10024</td>
+                  <td style="padding:16px;color:var(--mid-gray)">12 Apr 2025</td>
+                  <td style="padding:16px">Diamond Halo Ring × 1</td>
+                  <td style="padding:16px;font-family:var(--font-display)">₹15,999</td>
+                  <td style="padding:16px"><span style="background:#e8f5e9;color:#2e7d32;font-size:0.72rem;padding:4px 12px;letter-spacing:1px;text-transform:uppercase">Delivered</span></td>
+                  <td style="padding:16px"><a href="#" style="color:var(--gold);font-size:0.78rem">View Details</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:16px;font-family:var(--font-display)">#LMR-10019</td>
+                  <td style="padding:16px;color:var(--mid-gray)">28 Mar 2025</td>
+                  <td style="padding:16px">Pearl Earrings × 1, Gold Bangle × 2</td>
+                  <td style="padding:16px;font-family:var(--font-display)">₹23,997</td>
+                  <td style="padding:16px"><span style="background:#fff3e0;color:#e65100;font-size:0.72rem;padding:4px 12px;letter-spacing:1px;text-transform:uppercase">Shipped</span></td>
+                  <td style="padding:16px"><a href="#" style="color:var(--gold);font-size:0.78rem">Track Order</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:16px;font-family:var(--font-display)">#LMR-10005</td>
+                  <td style="padding:16px;color:var(--mid-gray)">10 Jan 2025</td>
+                  <td style="padding:16px">Gold Pendant Necklace × 1</td>
+                  <td style="padding:16px;font-family:var(--font-display)">₹8,999</td>
+                  <td style="padding:16px"><span style="background:#e8f5e9;color:#2e7d32;font-size:0.72rem;padding:4px 12px;letter-spacing:1px;text-transform:uppercase">Delivered</span></td>
+                  <td style="padding:16px"><a href="#" style="color:var(--gold);font-size:0.78rem">View Details</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- WISHLIST -->
+        <div class="tab-pane fade" id="tabWishlist">
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="product-card" data-product-id="p001" data-product-name="Diamond Halo Ring" data-product-price="15999" data-product-image="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80" data-product-category="Rings">
+                <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80" alt=""></div>
+                <div class="product-info">
+                  <div class="product-category">Rings</div>
+                  <div class="product-name">Diamond Halo Ring</div>
+                  <div class="product-price"><span class="price-current">₹15,999</span></div>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="product-card" data-product-id="p002" data-product-name="Gold Pendant Necklace" data-product-price="8999" data-product-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80" data-product-category="Necklaces">
+                <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80" alt=""></div>
+                <div class="product-info">
+                  <div class="product-category">Necklaces</div>
+                  <div class="product-name">Gold Pendant Necklace</div>
+                  <div class="product-price"><span class="price-current">₹8,999</span></div>
+                  <button class="btn-add-cart">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="tab-pane fade" id="tabProfile">
+          <div style="max-width:540px">
+            <form onsubmit="event.preventDefault(); showProfileSaved()">
+              <div class="row g-3 mb-3">
+                <div class="col-6">
+                  <label class="auth-label">First Name</label>
+                  <input type="text" class="auth-input" value="Priya" style="margin-bottom:0">
+                </div>
+                <div class="col-6">
+                  <label class="auth-label">Last Name</label>
+                  <input type="text" class="auth-input" value="Sharma" style="margin-bottom:0">
+                </div>
+              </div>
+              <label class="auth-label">Email Address</label>
+              <input type="email" class="auth-input" value="priya.sharma@example.com">
+              <label class="auth-label">Phone Number</label>
+              <input type="tel" class="auth-input" value="+91 98765 43210">
+              <label class="auth-label">Date of Birth</label>
+              <input type="date" class="auth-input">
+              <div style="border-top:1px solid var(--light-gray);padding-top:24px;margin-top:8px;margin-bottom:16px">
+                <div style="font-size:0.8rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Change Password</div>
+                <input type="password" class="auth-input" placeholder="Current password">
+                <input type="password" class="auth-input" placeholder="New password">
+                <input type="password" class="auth-input" placeholder="Confirm new password">
+              </div>
+              <button type="submit" class="btn-gold" style="padding:13px 36px">Save Changes</button>
+              <span id="profileSaved" style="display:none;margin-left:16px;color:#2ecc71;font-size:0.85rem">✓ Changes saved!</span>
+            </form>
+          </div>
+        </div>
+
+        <!-- ADDRESSES -->
+        <div class="tab-pane fade" id="tabAddress">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div style="padding:24px;border:2px solid var(--gold);position:relative">
+                <span style="position:absolute;top:12px;right:12px;background:var(--gold);color:var(--dark);font-size:0.65rem;padding:3px 10px;letter-spacing:1.5px;text-transform:uppercase">Default</span>
+                <div style="font-family:var(--font-display);font-size:1rem;margin-bottom:10px">Home</div>
+                <p style="font-size:0.88rem;color:var(--charcoal);line-height:1.8;margin-bottom:16px">
+                  Priya Sharma<br>
+                  12-3-45, Banjara Hills<br>
+                  Hyderabad, Telangana – 500034<br>
+                  +91 98765 43210
+                </p>
+                <a href="#" style="color:var(--gold);font-size:0.78rem;margin-right:16px">Edit</a>
+                <a href="#" style="color:var(--mid-gray);font-size:0.78rem">Remove</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div style="padding:24px;border:1px solid rgba(201,168,76,0.15)">
+                <div style="font-family:var(--font-display);font-size:1rem;margin-bottom:10px">Office</div>
+                <p style="font-size:0.88rem;color:var(--charcoal);line-height:1.8;margin-bottom:16px">
+                  Priya Sharma<br>
+                  Tech Hub, Madhapur<br>
+                  Hyderabad, Telangana – 500081<br>
+                  +91 98765 43210
+                </p>
+                <a href="#" style="color:var(--gold);font-size:0.78rem;margin-right:16px">Edit</a>
+                <a href="#" style="color:var(--mid-gray);font-size:0.78rem">Remove</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div style="padding:24px;border:1px dashed rgba(201,168,76,0.3);text-align:center;cursor:pointer;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">
+                <i class="bi bi-plus-circle" style="font-size:2rem;color:rgba(201,168,76,0.4);margin-bottom:12px;display:block"></i>
+                <div style="font-size:0.82rem;color:var(--mid-gray)">Add New Address</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components.js"></script>
+<script src="script.js"></script>
+<script>
+  // Simple demo auth
+  const DEMO_USER = { email: 'demo@lumiere.in', password: 'lumiere123', name: 'Priya' };
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPass').value;
+    // Accept any email/password for demo
+    sessionStorage.setItem('lumiere_user', JSON.stringify({ email, name: email.split('@')[0] }));
+    showDashboard();
+  }
+
+  function handleRegister(e) {
+    e.preventDefault();
+    alert('Account created! This is a demo. You are now logged in.');
+    sessionStorage.setItem('lumiere_user', JSON.stringify({ email: 'new@user.com', name: 'New User' }));
+    showDashboard();
+  }
+
+  function showDashboard() {
+    document.getElementById('authSection').style.display = 'none';
+    document.getElementById('dashboardSection').style.display = 'block';
+    const user = JSON.parse(sessionStorage.getItem('lumiere_user') || '{}');
+    // Update page heading
+    const heading = document.querySelector('#dashboardSection h1') || document.createElement('h1');
+  }
+
+  function handleLogout() {
+    sessionStorage.removeItem('lumiere_user');
+    document.getElementById('authSection').style.display = 'block';
+    document.getElementById('dashboardSection').style.display = 'none';
+  }
+
+  function showTab(name) {
+    const tabMap = { orders: '#tabOrders', wishlist: '#tabWishlist', address: '#tabAddress' };
+    if (tabMap[name]) {
+      const btn = document.querySelector(`[data-bs-target="${tabMap[name]}"]`);
+      if (btn) btn.click();
+    }
+  }
+
+  function showProfileSaved() {
+    const el = document.getElementById('profileSaved');
+    el.style.display = 'inline';
+    setTimeout(() => el.style.display = 'none', 3000);
+  }
+
+  // Check session
+  document.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem('lumiere_user')) showDashboard();
+  });
+</script>
+</body>
+</html>

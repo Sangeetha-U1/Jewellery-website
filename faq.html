@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – LUMIÈRE Jewels</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-luxury">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>FAQ</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Intro -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">We're Here to Help</div>
+      <h1 class="section-title">Frequently Asked Questions</h1>
+      <div class="gold-divider"></div>
+      <p style="color:var(--mid-gray);font-size:0.9rem;max-width:520px;margin:0 auto">Find answers to the most common questions about our products, ordering, delivery, and more. Can't find what you need? <a href="contact.html" style="color:var(--gold)">Contact us</a>.</p>
+    </div>
+
+    <!-- FAQ Search -->
+    <div style="max-width:500px;margin:0 auto 48px">
+      <div style="position:relative">
+        <i class="bi bi-search" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gold)"></i>
+        <input type="text" id="faqSearch" placeholder="Search questions..."
+          style="width:100%;padding:14px 16px 14px 44px;border:1px solid rgba(201,168,76,0.3);outline:none;font-family:var(--font-body);font-size:0.9rem;transition:var(--transition);background:var(--off-white)"
+          oninput="filterFAQs(this.value)"
+          onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.3)'">
+      </div>
+    </div>
+
+    <!-- FAQ Categories -->
+    <div class="d-flex gap-3 flex-wrap justify-content-center mb-5">
+      <button class="faq-cat-btn active" onclick="filterCategory('all', this)">All</button>
+      <button class="faq-cat-btn" onclick="filterCategory('orders', this)">Orders & Payment</button>
+      <button class="faq-cat-btn" onclick="filterCategory('shipping', this)">Shipping & Delivery</button>
+      <button class="faq-cat-btn" onclick="filterCategory('returns', this)">Returns & Exchanges</button>
+      <button class="faq-cat-btn" onclick="filterCategory('products', this)">Products & Jewellery</button>
+      <button class="faq-cat-btn" onclick="filterCategory('care', this)">Jewellery Care</button>
+    </div>
+
+    <style>
+      .faq-cat-btn {
+        background: var(--off-white);
+        border: 1px solid rgba(201,168,76,0.2);
+        color: var(--mid-gray);
+        padding: 8px 20px;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .faq-cat-btn:hover, .faq-cat-btn.active {
+        background: var(--dark);
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+    </style>
+
+    <div class="row g-5">
+      <!-- Orders & Payment -->
+      <div class="col-12" data-faq-category="orders">
+        <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+          <i class="bi bi-bag" style="font-size:1rem"></i> Orders & Payment
+        </div>
+        <div class="accordion faq-accordion" id="faqOrders">
+          <div class="accordion-item" data-faq-text="how do i place an order place order buying purchase">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq1">How do I place an order on LUMIÈRE Jewels?</button></h2>
+            <div id="fq1" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
+              <div class="accordion-body">Browse our collection, select the piece you love, choose your size and quantity, and click "Add to Cart". When you're ready, proceed to checkout, fill in your delivery details, select your payment method, and confirm your order. You'll receive an order confirmation email instantly.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="payment methods upi credit card emi pay">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq2">What payment methods do you accept?</button></h2>
+            <div id="fq2" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
+              <div class="accordion-body">We accept all major payment methods including Credit & Debit Cards (Visa, Mastercard, RuPay), Net Banking, UPI (GPay, PhonePe, Paytm), EMI options on select cards (3, 6, 12 months), and Cash on Delivery for orders below ₹25,000. All transactions are secured with 256-bit SSL encryption.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="cancel order cancellation how to cancel">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq3">Can I cancel or modify my order after placing it?</button></h2>
+            <div id="fq3" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
+              <div class="accordion-body">Orders can be cancelled or modified within 2 hours of placement by contacting our customer care at +91 98765 43210 or hello@lumierejewels.in. Once the order has been dispatched, cancellations are not possible, but you may initiate a return after delivery.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="invoice receipt order confirmation email">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq4">Will I receive an invoice for my purchase?</button></h2>
+            <div id="fq4" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
+              <div class="accordion-body">Yes, a detailed GST invoice is sent to your registered email immediately after order confirmation. A physical copy is also included in the packaging. For corporate orders requiring specific invoice formats, please contact us before placing your order.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="emi installments no cost emi buy now pay later">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq5">Is no-cost EMI available?</button></h2>
+            <div id="fq5" class="accordion-collapse collapse" data-bs-parent="#faqOrders">
+              <div class="accordion-body">Yes! No-cost EMI is available on orders above ₹10,000 on select credit cards from HDFC, ICICI, Axis, SBI, and Kotak banks for tenures of 3 and 6 months. Standard EMI (with interest) is available up to 24 months. EMI options are shown at checkout based on your card.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shipping -->
+      <div class="col-12" data-faq-category="shipping">
+        <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+          <i class="bi bi-truck" style="font-size:1rem"></i> Shipping & Delivery
+        </div>
+        <div class="accordion faq-accordion" id="faqShipping">
+          <div class="accordion-item" data-faq-text="shipping delivery time how long days">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq6">How long does delivery take?</button></h2>
+            <div id="fq6" class="accordion-collapse collapse" data-bs-parent="#faqShipping">
+              <div class="accordion-body">Standard delivery across India takes 3–5 business days. Express delivery (1–2 business days) is available in major metro cities — Hyderabad, Mumbai, Delhi, Bangalore, Chennai, Kolkata, and Pune — for an additional charge of ₹199. Orders placed before 12 PM are typically dispatched the same day.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="free shipping charges delivery cost">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq7">Is shipping free? What are the delivery charges?</button></h2>
+            <div id="fq7" class="accordion-collapse collapse" data-bs-parent="#faqShipping">
+              <div class="accordion-body">Standard shipping is completely free on all orders above ₹5,000. For orders below ₹5,000, a flat shipping fee of ₹299 is charged. All orders are fully insured during transit and dispatched via premium courier partners (BlueDart, Delhivery) with real-time tracking.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="track order tracking shipment status">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq8">How do I track my order?</button></h2>
+            <div id="fq8" class="accordion-collapse collapse" data-bs-parent="#faqShipping">
+              <div class="accordion-body">Once your order is dispatched, you'll receive an SMS and email with your tracking number and a direct link to track your shipment in real time. You can also track your order by logging into your account and visiting the "My Orders" section.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="international shipping outside india abroad">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq9">Do you ship internationally?</button></h2>
+            <div id="fq9" class="accordion-collapse collapse" data-bs-parent="#faqShipping">
+              <div class="accordion-body">Currently, we ship to all addresses within India. International shipping to the UAE, UK, USA, Singapore, Australia, and Canada is available for select products. International orders typically take 7–14 business days. Please contact us at hello@lumierejewels.in for international order enquiries and shipping costs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Returns -->
+      <div class="col-12" data-faq-category="returns">
+        <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+          <i class="bi bi-arrow-repeat" style="font-size:1rem"></i> Returns & Exchanges
+        </div>
+        <div class="accordion faq-accordion" id="faqReturns">
+          <div class="accordion-item" data-faq-text="return policy how to return refund 30 days">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq10">What is your return policy?</button></h2>
+            <div id="fq10" class="accordion-collapse collapse" data-bs-parent="#faqReturns">
+              <div class="accordion-body">We offer a 30-day hassle-free return policy. If you're not completely satisfied with your purchase, you can return it within 30 days of delivery for a full refund or exchange. Items must be unused, unworn, in original condition, and returned with the original packaging, certificate, and invoice.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="exchange resize different size product swap">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq11">Can I exchange a product for a different size or design?</button></h2>
+            <div id="fq11" class="accordion-collapse collapse" data-bs-parent="#faqReturns">
+              <div class="accordion-body">Yes! Exchanges are accepted within 30 days of delivery. You can exchange for a different size at no extra cost. For design exchanges, the price difference (if any) will be adjusted. Contact our team with your order number to initiate an exchange, and we'll arrange a free pickup.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="refund process time money back how long">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq12">How long does the refund process take?</button></h2>
+            <div id="fq12" class="accordion-collapse collapse" data-bs-parent="#faqReturns">
+              <div class="accordion-body">Once we receive and inspect the returned item (usually within 2–3 business days of pickup), refunds are processed within 5–7 business days. The amount is credited back to your original payment method. UPI/Bank transfer refunds are typically faster (2–3 days) compared to credit card refunds (5–7 days).</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="damaged defective broken wrong item received">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq13">What if I receive a damaged or wrong item?</button></h2>
+            <div id="fq13" class="accordion-collapse collapse" data-bs-parent="#faqReturns">
+              <div class="accordion-body">We take quality extremely seriously. If you receive a damaged, defective, or incorrect item, please contact us within 48 hours of delivery with photos of the item and packaging. We will arrange an immediate replacement at no cost to you, with priority shipping. This takes precedence over standard return timelines.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="col-12" data-faq-category="products">
+        <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+          <i class="bi bi-gem" style="font-size:1rem"></i> Products & Jewellery
+        </div>
+        <div class="accordion faq-accordion" id="faqProducts">
+          <div class="accordion-item" data-faq-text="hallmark bis certified gold real authentic">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq14">Are your gold pieces BIS Hallmarked?</button></h2>
+            <div id="fq14" class="accordion-collapse collapse" data-bs-parent="#faqProducts">
+              <div class="accordion-body">Yes, absolutely. All our gold jewellery is BIS Hallmarked, guaranteeing the purity of the gold as per Bureau of Indian Standards regulations. 22 Karat gold is hallmarked as 916 and 18 Karat gold as 750. The hallmark is visible on every piece and comes with an assay certificate upon request.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="diamond certificate gia igi certified real genuine">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq15">Do your diamonds come with a certificate?</button></h2>
+            <div id="fq15" class="accordion-collapse collapse" data-bs-parent="#faqProducts">
+              <div class="accordion-body">Yes. All diamond jewellery above 0.30 carats comes with a GIA (Gemological Institute of America) or IGI (International Gemological Institute) certificate. Smaller accent diamonds are accompanied by our in-house certificate of authenticity signed by our head gemologist, verifying colour, clarity, and carat weight.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="custom personalised bespoke design order made to order">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq16">Can I get a custom or personalised piece made?</button></h2>
+            <div id="fq16" class="accordion-collapse collapse" data-bs-parent="#faqProducts">
+              <div class="accordion-body">We love creating bespoke pieces! Our custom jewellery service allows you to design a one-of-a-kind creation. Share your vision with us via our contact form or visit our Hyderabad atelier. Custom orders require a 50% advance, take 3–6 weeks to complete, and are non-returnable. Pricing starts at ₹25,000.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="ring size guide how to measure sizing">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq17">How do I find my ring size?</button></h2>
+            <div id="fq17" class="accordion-collapse collapse" data-bs-parent="#faqProducts">
+              <div class="accordion-body">You can measure your ring size at home using a thin strip of paper or thread. Wrap it around your finger, mark where it meets, then measure the length. Divide by π (3.14159) to get your diameter in mm. Compare to our size chart: Size 5 = 15.7mm, Size 6 = 16.5mm, Size 7 = 17.3mm, Size 8 = 18.2mm, Size 9 = 19.0mm. When in doubt, size up. Free resizing is available within 60 days.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Care -->
+      <div class="col-12" data-faq-category="care">
+        <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+          <i class="bi bi-stars" style="font-size:1rem"></i> Jewellery Care
+        </div>
+        <div class="accordion faq-accordion" id="faqCare">
+          <div class="accordion-item" data-faq-text="clean jewellery how to clean maintain care">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq18">How do I clean and care for my jewellery?</button></h2>
+            <div id="fq18" class="accordion-collapse collapse" data-bs-parent="#faqCare">
+              <div class="accordion-body">For gold jewellery, gently clean with a soft cloth and mild dish soap diluted in warm water. Rinse thoroughly and pat dry. Avoid exposing jewellery to chemicals, perfumes, chlorine, and saltwater. For diamond pieces, use a soft toothbrush with soapy water. We recommend professional cleaning once a year at our atelier (free for LUMIÈRE customers).</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="store storage keep jewellery box safe">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq19">How should I store my jewellery?</button></h2>
+            <div id="fq19" class="accordion-collapse collapse" data-bs-parent="#faqCare">
+              <div class="accordion-body">Store each piece separately in the LUMIÈRE velvet pouch or box provided to prevent scratching. Keep jewellery away from direct sunlight and humidity. Silver pieces should be stored in anti-tarnish pouches. Avoid piling jewellery together in a drawer, as this can cause scratches and damage delicate settings.</div>
+            </div>
+          </div>
+          <div class="accordion-item" data-faq-text="repair resize polishing service maintenance">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fq20">Do you offer repair and resizing services?</button></h2>
+            <div id="fq20" class="accordion-collapse collapse" data-bs-parent="#faqCare">
+              <div class="accordion-body">Yes! We offer comprehensive after-sale services including ring resizing (free within 60 days of purchase), prong re-tipping, stone replacement, rhodium plating for white gold, and general polishing and restoration. Visit our Hyderabad atelier or ship the piece to us. Turnaround time is typically 7–10 business days. Contact us for pricing.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No results message -->
+    <div id="faqNoResults" style="display:none;text-align:center;padding:40px 20px">
+      <i class="bi bi-search" style="font-size:2.5rem;color:rgba(201,168,76,0.3);margin-bottom:16px;display:block"></i>
+      <p style="color:var(--mid-gray)">No questions matched your search. <a href="contact.html" style="color:var(--gold)">Ask us directly →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Still need help -->
+<section style="background:var(--dark);padding:80px 0;text-align:center">
+  <div class="container">
+    <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Still Have Questions?</div>
+    <h2 style="font-family:var(--font-display);font-size:2.2rem;color:var(--white);margin-bottom:16px">We're Always Here to Help</h2>
+    <p style="color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 36px;font-size:0.9rem">Our jewellery experts are available Monday to Saturday, 10AM–7PM to assist you with any question.</p>
+    <div class="row g-4 justify-content-center" style="max-width:700px;margin:0 auto">
+      <div class="col-md-4">
+        <a href="tel:+919876543210" style="display:block;padding:24px;border:1px solid rgba(201,168,76,0.3);text-decoration:none;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">
+          <i class="bi bi-telephone" style="font-size:1.8rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+          <div style="color:var(--white);font-size:0.85rem;margin-bottom:4px">Call Us</div>
+          <div style="color:var(--gold);font-size:0.8rem">+91 98765 43210</div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="mailto:hello@lumierejewels.in" style="display:block;padding:24px;border:1px solid rgba(201,168,76,0.3);text-decoration:none;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">
+          <i class="bi bi-envelope" style="font-size:1.8rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+          <div style="color:var(--white);font-size:0.85rem;margin-bottom:4px">Email Us</div>
+          <div style="color:var(--gold);font-size:0.8rem">hello@lumierejewels.in</div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="contact.html" style="display:block;padding:24px;border:1px solid rgba(201,168,76,0.3);text-decoration:none;transition:var(--transition)" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">
+          <i class="bi bi-chat-dots" style="font-size:1.8rem;color:var(--gold);margin-bottom:12px;display:block"></i>
+          <div style="color:var(--white);font-size:0.85rem;margin-bottom:4px">Contact Form</div>
+          <div style="color:var(--gold);font-size:0.8rem">Get a reply in 2 hours</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components.js"></script>
+<script src="script.js"></script>
+<script>
+  function filterFAQs(query) {
+    query = query.toLowerCase().trim();
+    const items = document.querySelectorAll('.accordion-item[data-faq-text]');
+    let visible = 0;
+    items.forEach(item => {
+      const text = item.dataset.faqText + ' ' + item.querySelector('.accordion-button').textContent.toLowerCase();
+      const match = !query || text.includes(query);
+      item.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    // Show/hide sections
+    document.querySelectorAll('[data-faq-category]').forEach(section => {
+      const anyVisible = [...section.querySelectorAll('.accordion-item')].some(i => i.style.display !== 'none');
+      section.style.display = query ? (anyVisible ? '' : 'none') : '';
+    });
+    document.getElementById('faqNoResults').style.display = (query && visible === 0) ? 'block' : 'none';
+  }
+
+  function filterCategory(cat, btn) {
+    document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('faqSearch').value = '';
+    document.querySelectorAll('[data-faq-category]').forEach(section => {
+      section.style.display = (cat === 'all' || section.dataset.faqCategory === cat) ? '' : 'none';
+    });
+    document.querySelectorAll('.accordion-item').forEach(i => i.style.display = '');
+    document.getElementById('faqNoResults').style.display = 'none';
+  }
+</script>
+</body>
+</html>

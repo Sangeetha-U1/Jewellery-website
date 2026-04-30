@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE Jewels – Luxury Fine Jewellery</title>
+  <meta name="description" content="Discover timeless luxury jewellery – rings, necklaces, earrings and bracelets crafted with passion.">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER (injected by components.js) ===== -->
+<header id="site-header"></header>
+
+<!-- ===== HERO CAROUSEL ===== -->
+<section class="hero-carousel">
+  <div id="heroSlider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1600&q=80" alt="Diamond Collection">
+          <div class="hero-overlay">
+            <div class="hero-content animate-up">
+              <div class="hero-badge">New Collection 2025</div>
+              <h1 class="hero-title">Where <em>Diamonds</em><br>Meet Desire</h1>
+              <p class="hero-desc">Exquisitely crafted fine jewellery for life's most precious moments.</p>
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="shop.html" class="btn-gold">Explore Now</a>
+                <a href="about.html" class="btn-outline-gold" style="color:#fff;border-color:rgba(255,255,255,0.5)">Our Story</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1600&q=80" alt="Gold Necklaces">
+          <div class="hero-overlay">
+            <div class="hero-content">
+              <div class="hero-badge">Bestsellers</div>
+              <h1 class="hero-title">Timeless <em>Gold</em><br>Elegance</h1>
+              <p class="hero-desc">18K gold necklaces and pendants that stand the test of time.</p>
+              <a href="shop.html" class="btn-gold">Shop Necklaces</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1600&q=80" alt="Ring Collection">
+          <div class="hero-overlay">
+            <div class="hero-content">
+              <div class="hero-badge">Engagement Season</div>
+              <h1 class="hero-title">Rings That<br><em>Speak Forever</em></h1>
+              <p class="hero-desc">Solitaire diamonds and custom engagement rings crafted just for you.</p>
+              <a href="shop.html" class="btn-gold">Discover Rings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+      <i class="bi bi-chevron-left" style="color:white;font-size:1.2rem"></i>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+      <i class="bi bi-chevron-right" style="color:white;font-size:1.2rem"></i>
+    </button>
+  </div>
+</section>
+
+<!-- ===== ANNOUNCEMENT ===== -->
+<div class="announcement-banner">
+  ✦ &nbsp; FREE SHIPPING ON ORDERS ABOVE ₹5000 &nbsp; | &nbsp; USE CODE <strong>LUMIERE15</strong> FOR 15% OFF &nbsp; | &nbsp; CERTIFIED HALLMARK GOLD &nbsp; ✦
+</div>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="categories-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Browse By</div>
+      <h2 class="section-title">Our Collections</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-3 col-md-6">
+        <a href="shop.html" class="d-block">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Rings">
+            <div class="category-overlay">
+              <div>
+                <div class="category-name">Rings</div>
+                <div class="category-count">24 Products</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <a href="shop.html" class="d-block">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80" alt="Necklaces">
+            <div class="category-overlay">
+              <div>
+                <div class="category-name">Necklaces</div>
+                <div class="category-count">18 Products</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <a href="shop.html" class="d-block">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1596944924591-0da3fac3a1c9?w=600&q=80" alt="Earrings">
+            <div class="category-overlay">
+              <div>
+                <div class="category-name">Earrings</div>
+                <div class="category-count">32 Products</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <a href="shop.html" class="d-block">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" alt="Bracelets">
+            <div class="category-overlay">
+              <div>
+                <div class="category-name">Bracelets</div>
+                <div class="category-count">15 Products</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="products-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Handpicked For You</div>
+      <h2 class="section-title">Featured Products</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="row g-4">
+
+      <!-- Product 1 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p001"
+          data-product-name="Diamond Halo Ring"
+          data-product-price="15999"
+          data-product-image="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80"
+          data-product-category="Rings">
+          <div class="product-img-wrapper">
+            <span class="product-badge">Bestseller</span>
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80" alt="Diamond Halo Ring" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn" title="Quick View"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn" title="Wishlist"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Rings</div>
+            <a href="product.html"><div class="product-name">Diamond Halo Ring</div></a>
+            <div class="product-rating">★★★★★ <span>(124)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹15,999</span>
+              <span class="price-original">₹19,999</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p002"
+          data-product-name="Gold Pendant Necklace"
+          data-product-price="8999"
+          data-product-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80"
+          data-product-category="Necklaces">
+          <div class="product-img-wrapper">
+            <span class="product-badge new">New</span>
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80" alt="Gold Pendant Necklace" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Necklaces</div>
+            <a href="product.html"><div class="product-name">Gold Pendant Necklace</div></a>
+            <div class="product-rating">★★★★☆ <span>(87)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹8,999</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p003"
+          data-product-name="Silver Charm Bracelet"
+          data-product-price="4999"
+          data-product-image="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80"
+          data-product-category="Bracelets">
+          <div class="product-img-wrapper">
+            <span class="product-badge sale">Sale</span>
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt="Silver Charm Bracelet" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Bracelets</div>
+            <a href="product.html"><div class="product-name">Silver Charm Bracelet</div></a>
+            <div class="product-rating">★★★★★ <span>(56)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹4,999</span>
+              <span class="price-original">₹6,499</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p004"
+          data-product-name="Pearl Drop Earrings"
+          data-product-price="3499"
+          data-product-image="https://images.unsplash.com/photo-1596944924591-0da3fac3a1c9?w=500&q=80"
+          data-product-category="Earrings">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1596944924591-0da3fac3a1c9?w=500&q=80" alt="Pearl Drop Earrings" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Earrings</div>
+            <a href="product.html"><div class="product-name">Pearl Drop Earrings</div></a>
+            <div class="product-rating">★★★★★ <span>(91)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹3,499</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p005"
+          data-product-name="Emerald Solitaire Ring"
+          data-product-price="19999"
+          data-product-image="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=500&q=80"
+          data-product-category="Rings">
+          <div class="product-img-wrapper">
+            <span class="product-badge">Luxury</span>
+            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=500&q=80" alt="Emerald Solitaire Ring" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Rings</div>
+            <a href="product.html"><div class="product-name">Emerald Solitaire Ring</div></a>
+            <div class="product-rating">★★★★★ <span>(43)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹19,999</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p006"
+          data-product-name="Rose Gold Chain Necklace"
+          data-product-price="6999"
+          data-product-image="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&q=80"
+          data-product-category="Necklaces">
+          <div class="product-img-wrapper">
+            <span class="product-badge new">New</span>
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&q=80" alt="Rose Gold Chain Necklace" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Necklaces</div>
+            <a href="product.html"><div class="product-name">Rose Gold Chain Necklace</div></a>
+            <div class="product-rating">★★★★☆ <span>(67)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹6,999</span>
+              <span class="price-original">₹8,499</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p007"
+          data-product-name="Diamond Stud Earrings"
+          data-product-price="12999"
+          data-product-image="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=500&q=80"
+          data-product-category="Earrings">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=500&q=80" alt="Diamond Stud Earrings" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Earrings</div>
+            <a href="product.html"><div class="product-name">Diamond Stud Earrings</div></a>
+            <div class="product-rating">★★★★★ <span>(112)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹12,999</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="product-card"
+          data-product-id="p008"
+          data-product-name="Gold Bangle Set"
+          data-product-price="9499"
+          data-product-image="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=500&q=80"
+          data-product-category="Bracelets">
+          <div class="product-img-wrapper">
+            <span class="product-badge sale">Sale</span>
+            <img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=500&q=80" alt="Gold Bangle Set" loading="lazy">
+            <div class="product-actions">
+              <a href="product.html" class="product-action-btn"><i class="bi bi-eye"></i></a>
+              <button class="product-action-btn"><i class="bi bi-heart"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Bracelets</div>
+            <a href="product.html"><div class="product-name">Gold Bangle Set</div></a>
+            <div class="product-rating">★★★★☆ <span>(78)</span></div>
+            <div class="product-price">
+              <span class="price-current">₹9,499</span>
+              <span class="price-original">₹11,999</span>
+            </div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="shop.html" class="btn-outline-gold">View All Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DISCOUNT BANNER ===== -->
+<section class="discount-banner">
+  <div class="container text-center position-relative" style="z-index:1">
+    <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px">Limited Time Offer</div>
+    <h2 style="font-family:var(--font-display);color:var(--white);font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:8px">
+      Up to <span style="color:var(--gold)">40% OFF</span> on Select Pieces
+    </h2>
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:24px;font-size:0.9rem">Offer ends in:</p>
+    <div class="discount-timer">
+      <div class="timer-unit">
+        <span class="timer-num" id="timer-hours">12</span>
+        <span class="timer-label">Hours</span>
+      </div>
+      <span class="timer-sep">:</span>
+      <div class="timer-unit">
+        <span class="timer-num" id="timer-mins">00</span>
+        <span class="timer-label">Mins</span>
+      </div>
+      <span class="timer-sep">:</span>
+      <div class="timer-unit">
+        <span class="timer-num" id="timer-secs">00</span>
+        <span class="timer-label">Secs</span>
+      </div>
+    </div>
+    <div class="mt-4">
+      <a href="shop.html" class="btn-gold">Claim Offer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Happy Customers</div>
+      <h2 class="section-title">What They Say</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The Diamond Halo Ring I ordered for my engagement was absolutely breathtaking. The craftsmanship is unparalleled and delivery was impeccable. My fiancée was in tears of joy!</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Arjun">
+            <div>
+              <div class="author-name">Arjun Mehta</div>
+              <div class="author-title">Hyderabad · ★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">I've been buying jewellery for 15 years and LUMIÈRE is hands down the finest. The Pearl Drop Earrings arrived in a gorgeous box and the quality exceeded my expectations.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80" alt="Priya">
+            <div>
+              <div class="author-name">Priya Sharma</div>
+              <div class="author-title">Mumbai · ★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Ordered the Gold Bangle Set as an anniversary gift. The real-time tracking and packaging made it feel extra special. My wife hasn't taken them off since! Truly luxury service.</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Rohit">
+            <div>
+              <div class="author-name">Rohit Verma</div>
+              <div class="author-title">Bangalore · ★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BADGES ===== -->
+<section style="padding:50px 0;background:var(--dark)">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <i class="bi bi-shield-check" style="font-size:2rem;color:var(--gold);display:block;margin-bottom:10px"></i>
+        <div style="color:var(--white);font-family:var(--font-display);margin-bottom:4px">100% Authentic</div>
+        <div style="color:rgba(255,255,255,0.4);font-size:0.8rem">Certified hallmark gold & diamonds</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-truck" style="font-size:2rem;color:var(--gold);display:block;margin-bottom:10px"></i>
+        <div style="color:var(--white);font-family:var(--font-display);margin-bottom:4px">Free Shipping</div>
+        <div style="color:rgba(255,255,255,0.4);font-size:0.8rem">On all orders above ₹5000</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-arrow-repeat" style="font-size:2rem;color:var(--gold);display:block;margin-bottom:10px"></i>
+        <div style="color:var(--white);font-family:var(--font-display);margin-bottom:4px">Easy Returns</div>
+        <div style="color:rgba(255,255,255,0.4);font-size:0.8rem">30-day hassle-free returns</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-headset" style="font-size:2rem;color:var(--gold);display:block;margin-bottom:10px"></i>
+        <div style="color:var(--white);font-family:var(--font-display);margin-bottom:4px">24/7 Support</div>
+        <div style="color:rgba(255,255,255,0.4);font-size:0.8rem">Dedicated customer service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter-section">
+  <div class="container text-center position-relative" style="z-index:1">
+    <div style="font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Stay Updated</div>
+    <h2 style="font-family:var(--font-display);color:var(--white);font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:10px">Join the LUMIÈRE Circle</h2>
+    <p style="color:rgba(255,255,255,0.5);margin-bottom:0;font-size:0.9rem">Get exclusive offers, new arrivals, and styling tips delivered to your inbox.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;margin-top:14px">No spam, ever. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div id="site-footer"></div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Components & Scripts -->
+<script src="components.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart – LUMIÈRE Jewels</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-luxury">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Shopping Cart</span>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Content -->
+<section class="section-pad">
+  <div class="container">
+    <div class="d-flex align-items-baseline gap-3 mb-4">
+      <h1 style="font-family:var(--font-display);font-size:2rem">Your Cart</h1>
+      <span style="font-size:0.8rem;color:var(--mid-gray);letter-spacing:1px;text-transform:uppercase" id="cartItemCount"></span>
+    </div>
+
+    <div class="row g-5">
+      <!-- Cart Items -->
+      <div class="col-lg-8">
+
+        <!-- Cart Header (desktop) -->
+        <div class="d-none d-md-grid mb-3" style="grid-template-columns:100px 1fr 120px 120px 80px 40px;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(201,168,76,0.2)">
+          <div></div>
+          <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray)">Product</div>
+          <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);text-align:center">Price</div>
+          <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);text-align:center">Qty</div>
+          <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid-gray);text-align:right">Total</div>
+          <div></div>
+        </div>
+
+        <!-- Items Container -->
+        <div id="cartItems"></div>
+
+        <!-- Cart Actions -->
+        <div class="d-flex justify-content-between align-items-center mt-4 pt-4" style="border-top:1px solid var(--light-gray)">
+          <a href="shop.html" class="btn-outline-gold" style="font-size:0.75rem">
+            <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+          </a>
+          <button onclick="if(confirm('Clear all items from cart?')){Cart.clear();renderCartPage();}" class="btn-outline-gold" style="font-size:0.75rem;color:var(--mid-gray);border-color:var(--light-gray)">
+            <i class="bi bi-trash me-2"></i>Clear Cart
+          </button>
+        </div>
+
+        <!-- Coupon -->
+        <div style="margin-top:32px;padding:24px;border:1px solid rgba(201,168,76,0.15);background:var(--off-white)">
+          <h6 style="font-family:var(--font-display);margin-bottom:14px">Apply Coupon Code</h6>
+          <div class="d-flex gap-3">
+            <input type="text" placeholder="Enter coupon code (e.g. LUMIERE15)" id="couponInput"
+              style="flex:1;border:1px solid var(--light-gray);padding:11px 16px;font-family:var(--font-body);font-size:0.85rem;outline:none;background:var(--white);transition:var(--transition)"
+              onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--light-gray)'">
+            <button class="btn-gold" onclick="applyCoupon()" style="white-space:nowrap">Apply</button>
+          </div>
+          <p id="couponMsg" style="font-size:0.8rem;margin-top:8px;display:none"></p>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="col-lg-4">
+        <div class="cart-summary">
+          <div class="cart-summary-title">Order Summary</div>
+
+          <div class="summary-row">
+            <span style="color:var(--mid-gray)">Subtotal</span>
+            <span id="cartSubtotal">₹0</span>
+          </div>
+          <div class="summary-row">
+            <span style="color:var(--mid-gray)">Shipping</span>
+            <span id="cartShipping" style="color:var(--gold)">—</span>
+          </div>
+          <div class="summary-row">
+            <span style="color:var(--mid-gray)">Discount</span>
+            <span id="cartDiscount" style="color:#2ecc71">—</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="cartTotal">₹0</span>
+          </div>
+
+          <button class="btn-gold w-100 mt-4" id="checkoutBtn" style="padding:16px;font-size:0.85rem">
+            Proceed to Checkout <i class="bi bi-arrow-right ms-2"></i>
+          </button>
+
+          <div style="text-align:center;margin-top:16px">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/100px-Visa_Inc._logo.svg.png" alt="Visa" style="height:20px;display:inline;margin:0 6px;opacity:0.6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/100px-Mastercard-logo.svg.png" alt="MC" style="height:20px;display:inline;margin:0 6px;opacity:0.6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/RuPay.svg/100px-RuPay.svg.png" alt="RuPay" style="height:20px;display:inline;margin:0 6px;opacity:0.6">
+          </div>
+          <p style="text-align:center;font-size:0.75rem;color:var(--mid-gray);margin-top:12px"><i class="bi bi-lock-fill me-1" style="color:var(--gold)"></i>Secure 256-bit SSL encryption</p>
+        </div>
+
+        <!-- Delivery info -->
+        <div style="margin-top:20px;padding:20px;border:1px solid rgba(201,168,76,0.15)">
+          <div class="d-flex gap-3 align-items-start mb-3">
+            <i class="bi bi-truck" style="color:var(--gold);font-size:1.2rem;flex-shrink:0;margin-top:2px"></i>
+            <div>
+              <div style="font-size:0.8rem;font-weight:500">Free Delivery on orders above ₹5,000</div>
+              <div style="font-size:0.75rem;color:var(--mid-gray)">Delivered in 3–5 business days across India</div>
+            </div>
+          </div>
+          <div class="d-flex gap-3 align-items-start mb-3">
+            <i class="bi bi-arrow-repeat" style="color:var(--gold);font-size:1.2rem;flex-shrink:0;margin-top:2px"></i>
+            <div>
+              <div style="font-size:0.8rem;font-weight:500">30-Day Easy Returns</div>
+              <div style="font-size:0.75rem;color:var(--mid-gray)">Hassle-free returns within 30 days of delivery</div>
+            </div>
+          </div>
+          <div class="d-flex gap-3 align-items-start">
+            <i class="bi bi-gift" style="color:var(--gold);font-size:1.2rem;flex-shrink:0;margin-top:2px"></i>
+            <div>
+              <div style="font-size:0.8rem;font-weight:500">Luxury Gift Packaging</div>
+              <div style="font-size:0.75rem;color:var(--mid-gray)">All orders include our signature gift box</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- You May Also Like -->
+<section style="padding:60px 0;background:var(--off-white)">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">You May Also Like</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="product-card" data-product-id="p001" data-product-name="Diamond Halo Ring" data-product-price="15999" data-product-image="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80" data-product-category="Rings">
+          <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80" alt=""></div>
+          <div class="product-info">
+            <div class="product-category">Rings</div>
+            <div class="product-name">Diamond Halo Ring</div>
+            <div class="product-price"><span class="price-current">₹15,999</span></div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="product-card" data-product-id="p002" data-product-name="Gold Pendant Necklace" data-product-price="8999" data-product-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80" data-product-category="Necklaces">
+          <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80" alt=""></div>
+          <div class="product-info">
+            <div class="product-category">Necklaces</div>
+            <div class="product-name">Gold Pendant Necklace</div>
+            <div class="product-price"><span class="price-current">₹8,999</span></div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="product-card" data-product-id="p003" data-product-name="Pearl Drop Earrings" data-product-price="5999" data-product-image="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=500&q=80" data-product-category="Earrings">
+          <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=500&q=80" alt=""></div>
+          <div class="product-info">
+            <div class="product-category">Earrings</div>
+            <div class="product-name">Pearl Drop Earrings</div>
+            <div class="product-price"><span class="price-current">₹5,999</span></div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="product-card" data-product-id="p004" data-product-name="Gold Bangle Set" data-product-price="11999" data-product-image="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" data-product-category="Bracelets">
+          <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt=""></div>
+          <div class="product-info">
+            <div class="product-category">Bracelets</div>
+            <div class="product-name">Gold Bangle Set</div>
+            <div class="product-price"><span class="price-current">₹11,999</span></div>
+            <button class="btn-add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components.js"></script>
+<script src="script.js"></script>
+<script>
+  const VALID_COUPONS = {
+    'LUMIERE15': { discount: 0.15, label: '15% off applied!' },
+    'SAVE10': { discount: 0.10, label: '10% off applied!' },
+    'WELCOME20': { discount: 0.20, label: '20% off applied!' }
+  };
+  let appliedCoupon = null;
+
+  function applyCoupon() {
+    const code = document.getElementById('couponInput').value.trim().toUpperCase();
+    const msg = document.getElementById('couponMsg');
+    msg.style.display = 'block';
+    if (VALID_COUPONS[code]) {
+      appliedCoupon = VALID_COUPONS[code];
+      appliedCoupon.code = code;
+      msg.style.color = '#2ecc71';
+      msg.textContent = '✓ ' + appliedCoupon.label;
+      updateCartSummaryWithCoupon();
+    } else {
+      msg.style.color = '#e74c3c';
+      msg.textContent = '✗ Invalid coupon code. Try LUMIERE15';
+      appliedCoupon = null;
+      updateCartSummaryWithCoupon();
+    }
+  }
+
+  function updateCartSummaryWithCoupon() {
+    const subtotal = Cart.getTotal();
+    const shipping = subtotal > 5000 ? 0 : 299;
+    const discount = appliedCoupon ? Math.round(subtotal * appliedCoupon.discount) : 0;
+    const total = subtotal + shipping - discount;
+
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('cartSubtotal', `₹${subtotal.toLocaleString('en-IN')}`);
+    set('cartShipping', shipping === 0 ? 'FREE' : `₹${shipping}`);
+    set('cartDiscount', discount > 0 ? `−₹${discount.toLocaleString('en-IN')}` : '—');
+    set('cartTotal', `₹${total.toLocaleString('en-IN')}`);
+    set('cartItemCount', Cart.getCount() + ' item(s)');
+  }
+
+  // Override default updateCartSummary to include coupon
+  const _origRender = window.renderCartPage;
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartSummaryWithCoupon();
+  });
+</script>
+</body>
+</html>
